@@ -22,14 +22,14 @@ public class BookstoreGUI {
     private final JFrame frame;
     private final Bookstore bookstore;
     private final List<Administrator> administrators; // List of administrators
-    private Cart cart; // Store the cart for the customer
-    private Customer customer; // Store the customer
+    private final Cart cart; // Store the cart for the customer
 
     public BookstoreGUI() {
         // Initialize components
         bookstore = new Bookstore(1, "Main Street");
         initializeBooks();
-        customer = new Customer(1, "John", "Doe", "123 Elm St", "555-5555", 100);
+        // Store the customer
+        Customer customer = new Customer(1, "John", "Doe", "123 Elm St", "555-5555", 100);
         cart = new Cart(1, customer.getId());
         administrators = new ArrayList<>(); // Admins list
         initializeAdmins();
